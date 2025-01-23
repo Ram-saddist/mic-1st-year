@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="counter" placeholder="Enter a message" onkeyup="calculateCount()"></textarea>
+    <p>Length of characters is:
+        <span id="showLength">20</span>
+    </p>
+    <script>
+        function calculateCount() {
+            var data = document.getElementById("counter")
+            console.log(data.value.length)
+            var showlength= document.getElementById("showLength")
+            if(data.value.length<=20){
+                showlength.innerHTML=20-data.value.length
+            }
+            else{
+                showlength.innerHTML="Limit exceeded"
+                showlength.style.color="red"
+                data.setAttribute("disabled","disabled")
+            }
+        }
+    </script>
+    <!-- <button onclick="dialogueBox()">Submit</button>
+    <script>
+        function dialogueBox(){
+            alert("You are in danger")
+        }
+    </script> -->
+</body>
+
+</html>

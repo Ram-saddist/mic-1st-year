@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <form action="https://www.google.com">
+        <p>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your name" required/>
+        </p>
+        <p>
+            <input type="email" id="emailId" name="emailId" placeholder="Enter your email" required/>
+        </p>
+        <p>
+            <input type="password" id="password" name="password" placeholder="Enter password" required/>
+        </p>
+        <p>
+            <input type="radio" id="male" name="gender" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" />
+            <label for="female">Female</label>
+        </p>
+        <p>
+            <input value="10th" type="checkbox" />10th
+            <input value="Intermediate" type="checkbox" />Intermediate
+            <input type="checkbox" value="Btech" />Btech
+            <input type="checkbox" value="Degree" />Degree
+        </p>
+        <p>
+            <textarea required name="address" id="address" placeholder="Enter address"></textarea>
+        </p>
+        <p>
+            <select required name="city" id="city">
+                <option value="">Select a city</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Vizag">Vizag</option>
+            </select>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
