@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #doctors-list{
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        }
+        .doctorItem{
+            text-align: center;
+            min-height: 35vh;
+            border-radius: 10px;
+            box-shadow: 0px 1px 4px rgba(0,255,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Doctors</h1>
+    <div id="doctors-list"></div>
+    <script>
+        fetch("https://doc-back.onrender.com/doctors")
+            .then((res) => {
+                //console.log(res)
+                return res.json()
+            })
+            .then((resJson) => {
+                console.log(resJson)
+                showDoctors(resJson)
+            })
+
+        function showDoctors(backendDoctors) {
+            console.log(backendDoctors)
+            for(i=0;i<backendDoctors.length;i++){
+                document.getElementById("doctors-list").innerHTML+=
+                `
+                    <div class="doctorItem">
+                        <p>Name:${backendDoctors[i].name}</p>   
+                        <p>Gender:${backendDoctors[i].gender}</p> 
+                        <p>Age:${backendDoctors[i].age}</p>
+                        <p>Specialization:${backendDoctors[i].specialization}</p>
+                    </div>
+                `
+            }
+        }
+    </script>
+
+</body>
+
+</html>
